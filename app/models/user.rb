@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :dialogues
+
+  validates :name, presence: :true, length: { minimum: 3 }
+  validates :age, numericality: { only_integer: true }
 end
