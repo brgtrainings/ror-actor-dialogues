@@ -17,8 +17,8 @@
       <td><%= dialogue.line %></td>
       <td><%= dialogue.movie %></td>
       <td><%= dialogue.nonveg %></td>
-      <td><a href="/dialogues/<%= dialogue.id %>">View</a></td>
-      <td>Edit</td>
+      <td><%= link_to  "View", dialogue_path(dialogue) %></td>
+      <td><%= link_to  "Edit", edit_dialogue_path(dialogue) %></td>
       <td>Delete</td>
     </tr>
     <% end %>
