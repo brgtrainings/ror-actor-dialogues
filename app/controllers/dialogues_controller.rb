@@ -1,4 +1,6 @@
 class DialoguesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @dialogues = Dialogue.all
   end
