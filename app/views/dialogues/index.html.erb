@@ -19,10 +19,12 @@
       <td><%= dialogue.nonveg %></td>
       <td><%= link_to  "View", dialogue_path(dialogue) %></td>
       <td><%= link_to  "Edit", edit_dialogue_path(dialogue) %></td>
-      <td>Delete</td>
+      <td><%= link_to  "Delete", dialogue_path(dialogue), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
     </tr>
     <% end %>
     </tfoot>
 </table>
-<br>
-<a href="/dialogues/new">Create new dialogue</a>
+
+<p>
+  <%= link_to  "Create new dialogue", new_dialogue_path %>
+</p>

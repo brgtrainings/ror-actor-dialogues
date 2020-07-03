@@ -38,6 +38,17 @@ class DialoguesController < ApplicationController
     end
   end
 
+  def destroy
+    @dialogue = Dialogue.find(params[:id])
+    if @dialogue.destroy
+      flash[:notice] = 'Dialogue was deleted successfully.'
+    else
+      flash[:alert] = 'Something went wrong.'
+    end
+
+    redirect_to dialogues_path
+  end
+
   private
 
   def dialogue_params
