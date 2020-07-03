@@ -1,13 +1,13 @@
 <h1>Create a new Dialogue</h1>
 
 <% if @dialogue.errors.any? %>
-  <h2>The following errors prevented the dialogue being saved.</h2>
+<h2>The following errors prevented the dialogue being saved.</h2>
 
-    <ul>
-    <% @dialogue.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @dialogue.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
 <% end %>
 
 <%= form_with scope: :dialogue, url: dialogues_path, local: true do |f| %>
@@ -28,3 +28,5 @@
 
 <%= f.submit "Create Dialogue" %>
 <% end %>
+
+<%= link_to  "Back to dialogue list", dialogues_path %>

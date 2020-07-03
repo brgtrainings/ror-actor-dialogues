@@ -9,4 +9,6 @@
   <strong>Nov Veg:</strong> <%= @dialogue.nonveg %>
 </p>
 
+<%= link_to  "Edit", edit_dialogue_path(@dialogue) %> |
+<%= link_to  "Delete", dialogue_path(@dialogue), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to "All dialogues", dialogues_path %>

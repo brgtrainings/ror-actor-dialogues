@@ -1,30 +1,34 @@
 <h1>Edit Dialogue</h1>
 
 <% if @dialogue.errors.any? %>
-  <h2>The following errors prevented the dialogue being saved.</h2>
+<h2>The following errors prevented the dialogue being saved.</h2>
 
-  <ul>
-    <% @dialogue.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @dialogue.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
 <% end %>
 
 <%= form_with model: @dialogue, local: true do |f| %>
-  <p>
-    <%= f.label :line %>
-    <%= f.text_area :line %>
-  </p>
+<p>
+  <%= f.label :line %>
+  <%= f.text_area :line %>
+</p>
 
-  <p>
-    <%= f.label :movie %>
-    <%= f.text_field :movie %>
-  </p>
+<p>
+  <%= f.label :movie %>
+  <%= f.text_field :movie %>
+</p>
 
-  <p>
-    <%= f.label :nonveg %>
-    <%= f.check_box :nonveg %>
-  </p>
+<p>
+  <%= f.label :nonveg %>
+  <%= f.check_box :nonveg %>
+</p>
 
-  <%= f.submit "Edit dialogue" %>
+<%= f.submit "Edit dialogue" %>
 <% end %>
+
+<p>
+  <%= link_to "Cancel and back to dialogue list", dialogues_path %>
+</p>
