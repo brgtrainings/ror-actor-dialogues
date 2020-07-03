@@ -15,6 +15,7 @@ class DialoguesController < ApplicationController
 
   def create
     @dialogue = Dialogue.new(dialogue_params)
+    @dialogue.user = current_user
     if @dialogue.save
       flash[:notice] = "Dialogue created successfully."
       redirect_to @dialogue
@@ -30,6 +31,7 @@ class DialoguesController < ApplicationController
   def update
     @dialogue = Dialogue.find(params[:id])
     @dialogue.update(dialogue_params)
+    @dialogue.user = current_user
 
     if @dialogue.save
       flash[:notice] = 'Dialogue was updated successfully.'
