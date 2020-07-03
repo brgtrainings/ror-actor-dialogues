@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @dialgues.each_with_index do |dialogue, i| %>
+    <% @dialogues.each_with_index do |dialogue, i| %>
     <tr>
       <td><%= i + 1 %></td>
       <td><%= dialogue.line %></td>
@@ -24,3 +24,5 @@
     <% end %>
     </tfoot>
 </table>
+<br>
+<a href="/dialogues/new">Create new dialogue</a>

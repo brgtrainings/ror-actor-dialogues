@@ -1,0 +1,20 @@
+<h1>Create a new Dialogue</h1>
+
+<%= form_with scope: :dialogue, url: dialogues_path, local: true do |f| %>
+<p>
+  <%= f.label :line %>
+  <%= f.text_area :line %>
+</p>
+
+<p>
+  <%= f.label :movie %>
+  <%= f.text_field :movie %>
+</p>
+
+<p>
+  <%= f.label :nonveg %>
+  <%= f.check_box :nonveg %>
+</p>
+
+<%= f.submit "Create Dialogue" %>
+<% end %>
